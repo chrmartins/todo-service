@@ -14,7 +14,7 @@ class TodolistApplicationTests {
 
 	@Test
 	void testCreateTodoSuccess() {
-		var todo = new Todo("todo 1", "desc todo 1", false, 1);
+		var todo = new Todo(null, "todo 1", "desc todo 1", false, 1);
 
 		webTestClient
 				.post()
@@ -37,7 +37,7 @@ class TodolistApplicationTests {
 				.post()
 				.uri("/todos")
 				.bodyValue(
-						new Todo("", "", false, 0))
+						new Todo(null, "", "", false, 0))
 				.exchange()
 				.expectStatus().isBadRequest();
 	}

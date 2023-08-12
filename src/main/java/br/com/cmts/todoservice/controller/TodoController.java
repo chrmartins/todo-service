@@ -2,6 +2,7 @@ package br.com.cmts.todoservice.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/todos")
 public class TodoController {
+    @Autowired
     private TodoService todoService;
 
     public TodoController(TodoService todoService) {
